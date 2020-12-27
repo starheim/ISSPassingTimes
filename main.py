@@ -18,6 +18,5 @@ passes = issPassResponse.json()['response']
 for p in passes:
 	risetime = datetime.fromtimestamp(p['risetime'])
 	duration = p['duration']
-	print(f"ISS will pass over Molde: {risetime} for {duration}s")
-
-
+	m, s = divmod(duration, 60)
+	print(f"ISS will pass over Molde: {risetime} for {m}m {s}s")
